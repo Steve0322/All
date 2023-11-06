@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <div class="header-inner">
+          <div class="logo">Steve</div>
+        </div>
+      </div>
+      <aside class="side-bar">
+        <section class="side-bar__icon-box">
+          <section class="side-bar__icon-1">
+            <div></div>
+            <div></div>
+            <div></div>
+          </section>
+        </section>
+        <ul>
+          <li>
+            <a href="#tag1">설정과 초기화</a>
+            
+          </li>
+          <li>
+            <a href="#tag2">기본적인 사용법</a>
+            
+          </li>
+          <li>
+            <a href="#tag3">브랜치</a>
+            
+          </li>
+          <li>
+            <a href="#tag4">git 이력</a>
+            
+          </li>
+          <li>
+            <a href="#tag5">원격 저장소</a>
+            
+          </li>
+        </ul>
+      </aside>
+      <div class="container">
+        <h1>git 정리</h1>
+        <div class="content">
+          <div class="content-header">
+            <h2 id="tag1">설정과 초기화</h2>
+          </div>
+          <div class="content-inner">
+            <h3>전역 사용자명/이메일 구성하기</h3>
+            <p>git config --global user.name "Your name"</p>
+            <p>git config - -global user.email “Your email address”</p>
+            <h3>
+              저장소별 사용자명/이메일 구성하기 (해당 저장소 디렉터리로 이동후)
+            </h3>
+            <p>git config user.name “Your name”</p>
+            <p>git config user.email “Your email address”</p>
+            <span
+              >참고로 user 설정이 되어 있지 않으면 Github에 있는 repository에
+              변경사항을 푸시 한다고 해도 commit count 집계도 안되고<br />
+              해당 커밋의 작성자 프로필 아이콘도 ? 로 표시되기 때문에 웬만하면
+              name과 email 주소를 설정하길 추천한다.</span
+            >
+            <h3>전역 설정 정보 조회</h3>
+            <p>git config - -global - -list</p>
+            <h3>저장소별 설정 정보 조회</h3>
+            <p>git config - -list</p>
+            <h3>Git의 출력결과 색상 활성화하기</h3>
+            <p>git config - -global color.ui “auto”</p>
+            <h3>새로운 저장소 초기화하기</h3>
+            <p>mkdir /path/newDir</p>
+            <span>새 폴더를 만들고</span>
+            <p>cd /path/newDir</p>
+            <span>폴더로 이동하고</span>
+            <p>git init</p>
+            <span>초기화</span>
+            <h3>저장소 복제하기</h3>
+            <p>git clone <저장소 url></p>
+            깃헙에서 가져오는 것
+            <h3>새로운 원격 저장소 추가하기</h3>
+            <p>git remote add <원격 저장소> <저장소 url></p>
+            <span>깃헙에 프로젝트와 연결 하는 것</span>
+          </div>
+        </div>
+        <div class="content">
+          <div class="content-header">
+            <h2 id="tag2">기본적인 사용법</h2>
+          </div>
+          <div class="content-inner">
+            <span>아래 명령어에서 [ ]는 선택적인 매개변수를 의미한다.</span>
+            <h3>
+              새로운 파일을 추가하거나 존재하는 파일 스테이징하고 커밋하기
+            </h3>
+            <p>git add <파일></p>
+            <p>git commit -m “<메시지>”</p>
+            <h3>파일의 일부를 스테이징하기</h3>
+            <p>git add -p [<파일> [<파일> [기타 파일들…]]]</p>
+            <h3>add 명령에서 Git 대화 모드를 사용하여 파일 추가하기</h3>
+            <p>git add -i</p>
+            <h3>수정되고 추적되는 파일의 변경 사항 스테이징하기</h3>
+            <p>git add -u [<경로> [<경로>]]</p>
+            <h3>수정되고 추적되는 모든 파일의 변경 사항 커밋하기</h3>
+            <p>git commit -m “<메시지>” -a</p>
+            <h3>작업 트리의 변경 사항 돌려놓기</h3>
+            <p>git checkout HEAD <파일> [<파일>]</p>
+            <h3>커밋되지 않고 스테이징된 변경 사항 재설정하기</h3>
+            <p>git reset HEAD <파일> [<파일>]</p>
+            <h3>마지막 커밋 고치기</h3>
+            <p>git commit -m “<메시지>” - -amend</p>
+            <h3>이전 커밋을 수정하고 커밋 메시지를 재사용하기</h3>
+            <p>git commit -C HEAD - -amend</p>
+          </div>
+        </div>
+        <div class="content">
+          <div class="content-header">
+            <h2 id="tag3">브랜치</h2>
+          </div>
+          <div class="content-inner">
+            <h3>지역 브랜치 목록 보기</h3>
+            <p>git branch</p>
+            <h3>원격 브랜치 목록 보기</h3>
+            <p>git branch -r</p>
+            <h3>지역과 원격을 포함한 모든 브랜치 목록 보기</h3>
+            <p>git branch -a</p>
+            <h3>현재 브랜치에서 새로운 브랜치 생성하기</h3>
+            <p>git branch <새로운 브랜치></p>
+            <h3>다른 브랜치 체크아웃하기</h3>
+            <p>git checkout <브랜치></p>
+            <h3>현재 브랜치에서 새로운 브랜치 생성하고 체크아웃하기</h3>
+            <p>git checkout -b <새로운 브랜치></p>
+            <h3>다른 시작 지점에서 브랜치 생성하기</h3>
+            <p>git branch <새로운 브랜치> <브랜치를 생성할 위치></p>
+            <h3>기존의 브랜치를 새로운 브랜치로 덮어쓰기</h3>
+            <p>git branch -f <기존 브랜치> <브랜치를 생성할 위치></p>
+            <h3>브랜치를 옮기거나 브랜치명 변경하기</h3>
+            <p>git checkout -m <기존 브랜치> <새로운 브랜치></p>
+            <h3><새로운 브랜치>가 존재하지 않을 경우</h3>
+            <p>git checkout -M <기존 브랜치> <새로운 브랜치></p>
+            <h3>다른 브랜치를 현재 브랜치로 합치기</h3>
+            <p>git merge <브랜치></p>
+            <h3>커밋하지 않고 합치기</h3>
+            <p>git merge - -no-commit <브랜치></p>
+            <h3>선택하여 합치기</h3>
+            <p>git cherry-pick <커밋명></p>
+            <h3>커밋하지 않고 선택하여 합치기</h3>
+            <p>git cherry-pick -n <커밋명></p>
+            <h3>브랜치의 이력을 다른 브랜치에 합치기</h3>
+            <p>git merge - -squash <브랜치></p>
+            <h3>브랜치 삭제하기</h3>
+            <p>git branch -d <삭제할 브랜치></p>
+            <h3>삭제할 브랜치가 현재 브랜치에 합쳐졌을 경우에만</h3>
+            <p>git branch -D <삭제할 브랜치></p>
+          </div>
+        </div>
+        <div class="content">
+          <div class="content-header">
+            <h2 id="tag4">git 이력</h2>
+          </div>
+          <div class="content-inner">
+            <h3>모든 이력 보기</h3>
+            <p>git log</p>
+            <h3>변경 사항을 보여주는 패치와 함께 로그 표시하기</h3>
+            <p>git log -p</p>
+            <h3>1개의 항목만 보이도록 로그 개수 제한하기</h3>
+            <p>git log -1</p>
+            <h3>20개의 항목과 패치만 보이도록 로그 제한하기</h3>
+            <p>git log -20 -p</p>
+            <h3>6개월 동안의 커밋 로그 보기</h3>
+            <p>git log - -since=”6 hours”</p>
+            <h3>이틀 전까지의 커밋 로그 보기</h3>
+            <p>git log - -before=”2 days”</p>
+            <h3>HEAD보다 세 개 이전의 커밋 로그 보기</h3>
+            <p>git log -1 HEAD-3</p>
+            <p>git log -1 HEAD^^^</p>
+            <p>git log -1 HEAD~1^^</p>
+            <h3>두 지점 사이의 커밋 로그 보기</h3>
+            <p>git log <시작 지점>…<끝 지점></p>
+            시작 지점이나 끝 지점은 커밋명, 브랜치명, 혹은 태그명이 될 수 있고 조합하여 사용 가능하다.
+            <h3>각 항목의 로그 이력 한 줄씩 보기</h3>
+            <p>git log - -pretty=oneline</p>
+            <h3>각 항목마다 영향 받은 줄의 통계 보기</h3>
+            <p>git log - -stat</p>
+            <h3>커밋할 시점의 파일 상태 보기</h3>
+            <p>git log - -name-status</p>
+            <h3>현재 작업 트리와 인덱스의 차이점 보기</h3>
+            <p>git diff</p>
+            <h3>인덱스와 저장소의 차이점 보기</h3>
+            <p>git diff - -cached</p>
+            <h3>작업 트리와 저장소의 차이점 보기</h3>
+            <p>git diff HEAD</p>
+            <h3>작업 트리와 특정 위치 간의 차이점 보기</h3>
+            <p>git diff <시작 지점></p>
+            시작 지점은 커밋명 or 브랜치명 or 태그명이다.
+            <h3>저장소의 두 지점 사이의 차이점 보기</h3>
+            <p>git diff <시작 지점> <끝 지점></p>
+            <h3>차이점의 통계 보기</h3>
+            <p>git diff - -stat <시작 지점> [<끝 지점>]</p>
+            <h3>파일의 커밋 정보 줄 단위로 보기</h3>
+            <p>git blame <파일></p>
+            <h3>파일의 줄 단위의 복사, 붙여 넣기, 이동 정보 보기</h3>
+            <p>git blame -M <파일></p>
+            <h3>파일의 줄 단위의 이동과 원본 파일 정보 보기</h3>
+            <p>git blame -C -C <파일></p>
+            <h3>로그에서 복사와 붙여 넣은 정보 보기</h3>
+            <p>git log -C -C -p -1 <특정 지점></p>
+          </div>
+        </div>
+        <div class="content">
+          <div class="content-header">
+            <h2 id="tag5">원격 저장소</h2>
+          </div>
+          <div class="content-inner">
+            <h3>저장소 복제하기</h3>
+            <p>git clone <저장소></p>
+            <h3>마지막 200개의 커밋만 포함하여 저장소 복제하기</h3>
+            <p>git clone - -depth 200 <저장소></p>
+            <h3>새로운 원격 저장소 추가하기</h3>
+            <p>git remote add <원격 저장소> <저장소 url></p>
+            <h3>모든 원격 브랜치 목록 보기</h3>
+            <p>git branch -r</p>
+            <h3>원격 브랜치에서 지역 브랜치 생성하기</h3>
+            <p>git branch <새로운 브랜치> <원격 브랜치></p>
+            <h3>원격 태그에서 지역 브랜치 생성하기</h3>
+            <p>git branch <새로운 브랜치> <원격 태그></p>
+            <h3>origin 저장소에서 합치지 않고 지역 브랜치로 변경 사항 가져오기</h3>
+            <p>git fetch</p>
+            <h3>원격 저장소에서 합치지 않고 지역 브랜치로 변경 사항 가져오기</h3>
+            <p>git fetch <원격 저장소></p>
+            <h3>원격 저장소에서 변경 사항을 가져와 현재 브랜치에 합치기</h3>
+            <p>git pull <원격 저장소></p>
+            <h3>origin 저장소에서 변경 사항을 가져와 현재 브랜치에 합치기</h3>
+            <p>git pull</p>
+            <h3>지역 브랜치를 원격 브랜치에 푸싱하기</h3>
+            <p>git push <원격 저장소> <지역 브랜치>:<원격 브랜치></p>
+            <h3>지역 브랜치를 동일한 이름의 원격 브랜치에 푸싱하기</h3>
+            <p>git push <원격 저장소> <지역 브랜치></p>
+            <h3>새로운 로컬 브랜치를 원격 저장소에 푸싱하기</h3>
+            <p>git push <원격 저장소> <지역 브랜치></p>
+            <h3>원격 저장소에서 쓸모가 없어진 원격 브랜치 제거하기</h3>
+            <p>git remote prune <원격 저장소></p>
+            <h3>원격 저장소를 제거하고 관련된 브랜치도 제거하기</h3>
+            <p>git remote rm <원격 저장소></p>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="logo">Steve</div>
+        <div class="footer-inner">
+          <div class="a1">내가 git에 대한 명령어를 정리하면서 나만 보기위해 만든 페이지</div>
+          <div class="a2">이걸 바탕으로 git에 이해도를 높이고 추가로 나의 생각을 밑에 넣을 생각이다</div>
+          <div class="a3">Tel : 010-7403-2329 | E-mail : jeongmin.yu@pickle.plus</div>
+        </div>
+        <div class="footer-sns">
+          <div class="sns-logo" id="insta"></a></div>
+          <div class="sns-logo" id="twitter"></div>
+          <div class="sns-logo" id="facebook"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

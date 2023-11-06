@@ -1,0 +1,15 @@
+@import "/과제/css/reset.css";
+
+body {
+  background: #fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+}
+h1 {
+  color:#000;
+  margin:auto;
+  font-size:50px;
+  user-select:none;
+}

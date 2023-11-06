@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  min-height: 90vh;
+}
+
+h1 {
+  font-weight: 600;
+  text-shadow: 2px 2px 4px gray;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  height: auto;
+  padding: 25px 35px;
+  border-radius: 10px;
+  background-color: #131313;
+  user-select: none;
+  box-shadow: 2px 4px 8px 0 gray;
+}
+
+.display {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(2, minmax(40px, auto));
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px rgba(128, 128, 128, 0.116) solid;
+  word-wrap: break-word;
+}
+
+.display input {
+  height: 8vh;
+  color: white;
+  text-align: right;
+  border: none;
+  background: none;
+  font-size: xx-large;
+  line-height: 2;
+  word-wrap: break-word;
+}
+
+.display output {
+  height: 7px;
+  color: rgba(150, 150, 150, 0.87);
+  text-align: right;
+  font-size: larger;
+  line-height: 3;
+}
+
+.keypad {
+  display: grid;
+  grid: repeat(5, 70px) / repeat(4, 80px);
+}
+
+.keypad button {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #131313;
+  color: white;
+  font-size: x-large;
+}
+
+.keypad button:hover {
+  background-color: rgba(29, 29, 29, 0.979);
+}
+
+.keypad button.operation {
+  color: #ff8800;
+}
