@@ -117,6 +117,7 @@ slideItems[slideItems.length - 1].after(startElem);
 slideItems = document.querySelectorAll(".slide-item");
 
 let offset = slideWidth + currSlide;
+
 slideItems.forEach((i) => {
   i.setAttribute("style", `left: ${-offset}px`);
 });
