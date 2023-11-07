@@ -7,7 +7,7 @@ body {
   display:flex;
   align-items:center;
   justify-content: center;
-  background: #bbb;
+  background: #6671d3;
 }
 
 input{
@@ -20,11 +20,13 @@ input{
   padding: 0 10px;
 }
 button {
-  height: 55px;
+  height: 54px;
+  
   background:mediumspringgreen;
   border:none;
   color: greenyellow;
   font-size: 15px;
+  border-radius: 5px;
   text-shadow: 2px 2px 4px black;
 }
 div {
