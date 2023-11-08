@@ -1,14 +1,11 @@
-let sw = 0;
-let count = 0;
-document.querySelector("h1").addEventListener("click", function() {
-  
+const colors = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
 
-  if (sw == 0) {
-    document.querySelector("h1").style.color = "blue";
-    sw += 1;
-    
-  } else {
-    document.querySelector("h1").style.color = "black";
-    sw -= 1;
-  }
-})
+const a = [];
+const myArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+for(let i = 0; i < 6; i++) {
+  const randomIndex = Math.floor(Math.random() * myArray.length);
+  const randomValue = myArray[randomIndex];
+  a[i] = randomValue;
+}
+
+console.log(a);
